@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Chat</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="main.js"></script>
+
+</head>
+<body>
+	<audio id="audio" src="audio/beep-07.wav" autostart="false" ></audio>
+	<section class="container-fluid">
+		<div class="navbar navbar-default navbar-fixed-top" >
+			<h3 class="text-center">My App</h3>
+		</div>
+		<br>
+		<div class="row mt70">
+			<article class="col-md-4 hidden-xs">
+				<div class="user panel panel-primary">
+					<div class="panel-heading">
+					    <h3 class="panel-title text-center">Han escrito</h3>
+					 </div>
+					<ul class="list-group" id="user">
+
+					</ul>
+				</div>
+			</article>
+			<article class="col-md-8">
+				<div id="messages"></div>
+			</article>
+		</div>
+
+		<div class="navbar navbar-default navbar-fixed-bottom">
+			<div class="article container-fluid">			
+			    <form onsubmit="return addMessage(this)" class="navbar-form">
+					<input type="text" class="form-control" id="username" placeholder="Username" required>
+					<input name="" id="texto" class="form-control" placeholder="Mensaje" required>
+		
+					<button class="btn btn-info btn-lg hidden-xs" type="submit">Enviar</button>
+					<button class="btn btn-info btn-xd visible-xs" type="submit">Enviar</button>
+
+				</form>
+			</div>
+		</div>		
+	</section>
+
+</body>
+</html>
+
