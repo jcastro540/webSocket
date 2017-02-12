@@ -1,11 +1,11 @@
 {
-  "name": "ejemplo-express",
+  "name": "webSocket",
   "version": "1.0.0",
   "description": "Ejercio de Express",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./server/server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+    // "start": "nodemon ./server/server.js"
   },
   "author": "José Castro",
   "license": "MIT",
