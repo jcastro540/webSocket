@@ -5,6 +5,8 @@ let io = require('socket.io')(server);
 let mongoose = require('mongoose');
 let Message = require('./models/message');
 // let GLOBAL = require('./GLOBAL.js');
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
 var messages;
 var users;
@@ -123,15 +125,18 @@ function getUsers(){
 	});
 }
 
-// Servidor
-
 	mongoose.connect("mongodb://jcastro540:9736393@ds151059.mlab.com:51059/chat", (err, res)=>{
 	if (err) {
 		throw err;
 	}else{
-		console.log("Base de datos funcionando correctamente");
-		server.listen(3000, ()=>{
-			console.log(`Servidor corriendo`);
+		// console.log("Base de datos funcionando correctamente");
+		// server.listen(3000, ()=>{
+		// 	console.log(`Servidor corriendo`);
+		// });
+
+		server.listen(server_port, server_ip_address, function () {
+  			console.log( "Listening on " + server_ip_address + ", port " + server_port )
 		});
+
 	}
 });
