@@ -1,7 +1,5 @@
 // var socket = io.connect('http://localhost:3000/',{forceNew: true});
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
-var socket = io.connect(server_ip_address+':'+server_port,{forceNew: true});
+var socket = io.connect('http://chat-josecastro.rhcloud.com:8080',{forceNew: true});
 //Contenedor de usuarios;
 //var users = [];
 socket.on('messages',function(data){
