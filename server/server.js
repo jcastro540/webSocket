@@ -4,6 +4,7 @@ let server = require('http').Server(app);
 let io = require('socket.io')(server);
 let mongoose = require('mongoose');
 let Message = require('./models/message');
+// let GLOBAL = require('./GLOBAL.js');
 
 var messages;
 var users;
@@ -124,7 +125,7 @@ function getUsers(){
 
 // Servidor
 
-mongoose.connect('mongodb://localhost:27017/chat', (err, res)=>{
+	mongoose.connect("mongodb://jcastro540:9736393@ds151059.mlab.com:51059/chat", (err, res)=>{
 	if (err) {
 		throw err;
 	}else{
@@ -134,4 +135,3 @@ mongoose.connect('mongodb://localhost:27017/chat', (err, res)=>{
 		});
 	}
 });
-
